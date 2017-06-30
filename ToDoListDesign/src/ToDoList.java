@@ -1,48 +1,87 @@
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.Iterator;
 
-import javax.swing.JFrame;
-import javax.swing.text.html.HTMLDocument.Iterator;
+
+
 
  
-public abstract  class ToDoList {
+public  class ToDoList {
 
 	
-		public static ArrayList<String> creatToDoList(){
-			ArrayList<String> myToDoList = new ArrayList <String>();
+		//public static ArrayList<String> creatToDoList(){
 			
-		HashSet<String> myHashSet = new HashSet <String>();
-		
-		myToDoList.add("Get ready");
-		myToDoList.add("eat breakfast");		
-		myToDoList.add("Write ToDoList program");
-		myToDoList.add("Have lunch");
-		myToDoList.add("Shopping");
-		myToDoList.add("Meeting");
-		myToDoList.add("Sleep");
-		
-//		myHashSet.add("Get ready");
-//		myHashSet.add("eat breakfast");		
-//		myHashSet.add("Write ToDoList program");
-//		myHashSet.add("Have lunch");
-//		myHashSet.add("Shopping");
-//		myHashSet.add("Meeting");
-//		myHashSet.add("Sleep");
+			//static ArrayList <String> removeDuplicates (ArrayList<String> list);
+			
+			public ArrayList<ToDo> myToDoList = new ArrayList<ToDo>();
 
-		//System.out.println(myToDoList.size());
-//		System.out.println(myHashSet.size());
+			public Iterator<ToDoList> Iterator() {
+				// TODO Auto-generated method stub
+				return null;
+			}
+//
+//			public void myToDoList(Iterator itr) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//			
+//			public boolean addToItemList(String text){
+//				return myToDoList.add(new ToDo(text));
 		
-				
-		myToDoList.remove(0);
-		myToDoList.add(4, "Dinner");
-		
-		
-		for(int i = 0; i <myToDoList.size(); i++){
-			System.out.println(myToDoList.get(i));
-		}
-		
-		//Iterator <String> myIterator = myHashSet.iterator();
-		//JFrame f = new JFrame();
-		return myToDoList;
-		}
+			
+//		HashSet<String> myHashSet = new HashSet <String>();
+//		
+//		for (String item : myToDoList){
+//			if(!myHastSet.contains(item)){
+//				result.add(item);
+//				set.add(item);
+//			}
+//		}
+//		
+//		myToDoList.add("Get ready");
+//		myToDoList.add("eat breakfast");		
+//		myToDoList.add("Write ToDoList program");
+//		myToDoList.add("Have lunch");
+//		myToDoList.add("Shopping");
+//		myToDoList.add("Meeting");
+//		myToDoList.add("Sleep");
+////		
+////		myHashSet.add("Get ready");
+////		myHashSet.add("eat breakfast");		
+////		myHashSet.add("Write ToDoList program");
+////		myHashSet.add("Have lunch");
+////		myHashSet.add("Shopping");
+////		myHashSet.add("Meeting");
+////		myHashSet.add("Sleep");
+//
+//		//System.out.println(myToDoList.size());
+////		System.out.println(myHashSet.size());
+//		
+//				
+//		//myToDoList.remove(0);
+//		myToDoList.add(4, "Dinner");
+//		
+//		  myToDoList.leave();
+//		    myToDoList.done("get ready");	    
+//
+//		    myToDoList.leave();
+//		    
+//		    public void done()
+//		
+//		
+//		for(int i = 0; i <myToDoList.size(); i++){
+//			System.out.println(myToDoList.get(i));
+//		}
+//		
+//		System.out.println(" ");
+//		
+////		java.util.Iterator<String> myIterator = myHashSet.iterator();
+////		while  (myIterator.hasNext()){
+////			String nextString = myIterator.next();
+////			System.out.println(nextString);
+////		}
+//		
+//		return myToDoList;
+	//	}
+
 }

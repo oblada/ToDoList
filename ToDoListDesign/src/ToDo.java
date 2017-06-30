@@ -1,47 +1,50 @@
+import java.time.LocalDateTime;
 import java.util.Date;
 
 public class ToDo {
 	
 	private String text;
-	private boolean isActive;
-	private Date timeStamp;
+	private boolean active;
+	private LocalDateTime timeStamp;
 	
 	public ToDo(String text){
-		super();
+
 		this.text = text;
-		this.isActive = true;
-		this.timeStamp = new java.util.Date(System.currentTimeMillis());
+		//this.active = true;
+		this.timeStamp = LocalDateTime.now();
 	}
-	
-	public String getText(){
+
+	public String getText() {
 		return text;
-		
 	}
-	public void setText(String text){
+
+	public void setText(String text) {
 		this.text = text;
 	}
-	
-	
-	public boolean getIsActive (){
-		return isActive;
+
+	public boolean isActive() {
+		return active;
 	}
-	public void setIsActiv (boolean isActive){
-		this.isActive = isActive;
+
+	public void setActive(boolean active) {
+		this.active = active;
 	}
-	
-	
-	public Date TimeStamp(){
+
+	public LocalDateTime getTimeStamp() {
 		return timeStamp;
 	}
-	public void setTimpeStamp(Date timeStamp){
+
+	public void setTimeStamp(LocalDateTime timeStamp) {
 		this.timeStamp = timeStamp;
 	}
+
+	@Override
+	public String toString() {
+		//return "ToDo [text=" + text + ", active=" + active + ", timeStamp=" + timeStamp + "]";
+		return text + " is " + " " + active + " and created in " + timeStamp;
+	}
 	
-	
-	
-	
-	
-	
+
 	
 
 }
