@@ -3,7 +3,7 @@ import java.util.Date;
 
 public class ToDo {
 	
-	private String text;
+	public String text;
 	private boolean active;
 	private LocalDateTime timeStamp;
 	

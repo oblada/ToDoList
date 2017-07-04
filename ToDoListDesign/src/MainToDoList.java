@@ -16,18 +16,20 @@ public class MainToDoList {
 
 
 	public static void main(String[] args) {
+	
+		
+		
+		mainProgram:
 		System.out.println("\n"
+				+ "0= Exit.\n"
 				+ "1= Add a new item.\n"
 				+ "2= Show the itemList.\n"
 				+ "3= Remove an existed item.\n"
-				+ "4= Witch task do you want to change?"
-				+ "5= Remane an item.\n"
-				+ "6= Search for an item.\n"
-				+ "7= Witch task is done?\n"
-				+ "8= Remove all done items.\n"
-				+ "9= Mark a item.\n"
-				+ "10= unmark a item.\n"
-				+ "0= Exit.\n");
+				+ "4= Witch task do you want to change?\n"
+				+ "5= Search for an item.\n"
+				+ "6= Witch task is done?\n"
+				+ "7= Remove all done items.\n"
+				);
 
 		ToDoList myList = new ToDoList();
 
@@ -35,41 +37,57 @@ public class MainToDoList {
 
 
 		Scanner scan = new Scanner(System.in);
-
+				
 		//		int textIn = scan.nextInt();
-		//		scan.nextLine();
 		//		
 
 
 		
 
-		exit: while(true) { //while
-//			
+		exit: 
+			while(true) { //while
+//			boolean userInputBad = false;
+//			int i=1;
 			int textIn = 0;
+//			
+//			do{
+		
+			System.out.println("Chose a number 0-7!");
 			
-			//do{
-			
-			System.out.println("Chose a number 0-8!");
-			
-			//try {//try
+//		try {//try
 			 textIn = scan.nextInt();
 		
-//			}
-//			
+	//		}
+			
 //			catch (InputMismatchException ime){
 //			System.out.println("You should enter a numer between 0-8");
 //			userInputBad = true;	
+//			i++;
 //			
 //			}
-//			
-			scan.nextLine();
-//			if (i>3)break;
+		
+		    scan.nextLine();
+			
+		
+//			if (i>3)
+//				break;
 //				
+//			
+//			
+//			if (userInputBad == true)
+//				break;
+//			
+//			
 //			}		
+//			
+//			
+//			
 //			while(userInputBad);
-//			if (userInputBad == true)break;
 //			
 //			
+			
+			
+			
 				
 			switch (textIn) {
 			case 0: 
@@ -89,7 +107,7 @@ public class MainToDoList {
 
 			case 2: {
 				System.out.println("List of tasks to do: ");
-				for(ToDo next:myList.myToDoList )
+				for(ToDo next : myList.myToDoList )
 					System.out.println(next);
 				break;
 			}
@@ -111,37 +129,57 @@ public class MainToDoList {
 			} 
 
 			case 4:{
-				System.out.println("Enter a task you want to change it's name?");
-				String str = scan.next();
-				
+				System.out.println("Enter a task you want to rename:");
+				String old = scan.next();
+                System.out.println("Type in the new name");
+                String change = scan.next();
+                
 				Iterator<ToDo> itr = myList.myToDoList.iterator();
 				while (itr.hasNext()){	
 					ToDo td = itr.next();
-					if (td.getText().equalsIgnoreCase(str)){
-//						td.getText();
-//						td.setText(itr);
+					if (td.getText().equalsIgnoreCase(old)){
+						td.setText(change);
 					}
 				
+//					System.out.println("Renaming " + myList.myToDoList.get(textIn).text + " to:");
+//                  myList.myToDoList.get(textIn).text = scan.nextLine();
+
 				}
 				break;
-			}
+		}
 			
 
+
+				
 
 			case 5:{ 
-				System.out.println("Enter a new task:");
-				break;
-			}
+                System.out.println("Search an item!");               
+               String search = scan.next();
+//                scan.nextLine();
+                
+                Iterator<ToDo> itr =  myList.myToDoList.iterator();
+                while (itr.hasNext()){
+                	ToDo td = itr.next();
+                	if(td.getText().equalsIgnoreCase(search)){
+                	
+                	//	td.setText(search);
+                		 System.out.println(search);
+                	}
+              
+                }
+               
+//                for (ToDo item : myList.myToDoList) {
+//                   
+//                    if (!item.text.contains(search)) {
+//                        continue; 
+//                    }
+//                   
+//                    System.out.println(item);
+//                }
+                break;
+            }
 			
-
-			case 6:{ 
-				System.out.println ("Search an item!");
-				searchmyToDoList(myList);
-				break;
-			}
-
-
-			case 7:{
+			case 6:{
 				System.out.println("Entre the name of task that is done?");
 				String str = scan.next();
 				
@@ -157,7 +195,7 @@ public class MainToDoList {
 			}
 			
 
-			case 8: {
+			case 7: {
 				System.out.println("Remove all done items");
 
 				Iterator<ToDo> itr = myList.myToDoList.iterator();
@@ -172,8 +210,8 @@ public class MainToDoList {
 				break;
 			}
 
+			case 8: 
 			case 9: 
-			case 10: 
 				break;
 
 
@@ -192,11 +230,6 @@ public class MainToDoList {
 			
 		}//while
 	}
-
-	private static void searchmyToDoList(ToDoList myList) {
-
-
-	}//Main
 
 
 
